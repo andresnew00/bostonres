@@ -1,0 +1,1452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join the Champions Circle | Animal Rescue League of Boston</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #d52b1e;
+    --red-dark: #a8211a;
+    --red-light: #e8453a;
+    --white: #ffffff;
+    --off-white: #faf9f7;
+    --warm-gray: #f3f0ec;
+    --charcoal: #1a1a1a;
+    --mid-gray: #555;
+    --light-gray: #e8e4e0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--charcoal);
+    background: var(--off-white);
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--white);
+    padding: 16px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 3px solid var(--red);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  }
+
+  .logo-wrap {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+  }
+
+  .logo-svg {
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+  }
+
+  .logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--charcoal);
+    max-width: 180px;
+  }
+
+  .logo-text span {
+    color: var(--red);
+    display: block;
+    font-size: 11px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-top: 2px;
+    color: var(--mid-gray);
+  }
+
+  .header-cta {
+    background: var(--red);
+    color: var(--white);
+    text-decoration: none;
+    padding: 10px 24px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: background 0.2s;
+  }
+
+  .header-cta:hover { background: var(--red-dark); }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 620px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: var(--charcoal);
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://b1237137.smushcdn.com/1237137/wp-content/uploads/2025/03/Dog-in-Womens-Hand-scaled.jpg?lossy=1&strip=1&webp=1');
+    background-size: cover;
+    background-position: center 30%;
+    opacity: 0.45;
+    transform: scale(1.04);
+    animation: zoomOut 12s ease forwards;
+  }
+
+  @keyframes zoomOut {
+    from { transform: scale(1.08); }
+    to { transform: scale(1.0); }
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(105deg, rgba(213,43,30,0.72) 0%, rgba(26,26,26,0.6) 100%);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 760px;
+    padding: 80px 60px;
+    opacity: 0;
+    transform: translateY(28px);
+    animation: fadeUp 0.9s 0.3s ease forwards;
+  }
+
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.75);
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: 22px;
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    color: #ffcbc7;
+  }
+
+  .hero-sub {
+    font-size: 1.15rem;
+    color: rgba(255,255,255,0.88);
+    max-width: 560px;
+    margin-bottom: 36px;
+    line-height: 1.6;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--white);
+    color: var(--red);
+    padding: 15px 34px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.18);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.25);
+  }
+
+  .btn-ghost {
+    display: inline-block;
+    border: 2px solid rgba(255,255,255,0.7);
+    color: var(--white);
+    padding: 14px 30px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    transition: background 0.2s, border-color 0.2s;
+  }
+
+  .btn-ghost:hover {
+    background: rgba(255,255,255,0.12);
+    border-color: var(--white);
+  }
+
+  /* VSL placeholder */
+  .vsl-placeholder {
+    background: rgba(255,255,255,0.08);
+    border: 2px dashed rgba(255,255,255,0.3);
+    border-radius: 8px;
+    padding: 20px 30px;
+    text-align: center;
+    color: rgba(255,255,255,0.6);
+    font-size: 14px;
+    margin-top: 30px;
+    max-width: 480px;
+  }
+
+  /* ── IMPACT STATS ── */
+  .stats-band {
+    background: var(--red);
+    padding: 50px 40px;
+  }
+
+  .stats-grid {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    text-align: center;
+  }
+
+  .stat-item {
+    color: var(--white);
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.5s, transform 0.5s;
+  }
+
+  .stat-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 4vw, 3rem);
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .stat-label {
+    font-size: 13px;
+    opacity: 0.88;
+    letter-spacing: 0.3px;
+    max-width: 160px;
+    margin: 0 auto;
+    line-height: 1.4;
+  }
+
+  /* ── SECTION WRAPPER ── */
+  section {
+    padding: 80px 40px;
+  }
+
+  .section-inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .section-eyebrow {
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--red);
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 20px;
+    color: var(--charcoal);
+  }
+
+  .section-lead {
+    font-size: 1.08rem;
+    color: var(--mid-gray);
+    max-width: 640px;
+    margin-bottom: 40px;
+  }
+
+  /* ── PAIN POINTS ── */
+  .pain-section {
+    background: var(--warm-gray);
+  }
+
+  .pain-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+  }
+
+  .pain-card {
+    background: var(--white);
+    border-radius: 8px;
+    padding: 28px 24px;
+    border-left: 4px solid var(--red);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.5s, transform 0.5s;
+  }
+
+  .pain-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .pain-icon {
+    font-size: 2rem;
+    margin-bottom: 12px;
+  }
+
+  .pain-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--charcoal);
+  }
+
+  .pain-card p {
+    font-size: 0.95rem;
+    color: var(--mid-gray);
+    line-height: 1.55;
+  }
+
+  /* ── WHY US ── */
+  .why-us-section {
+    background: var(--white);
+  }
+
+  .why-us-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .why-us-copy p {
+    margin-bottom: 16px;
+    color: var(--mid-gray);
+    font-size: 1rem;
+  }
+
+  .awards-row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 24px;
+    align-items: center;
+  }
+
+  .award-badge {
+    background: var(--warm-gray);
+    border-radius: 6px;
+    padding: 8px 14px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--charcoal);
+    letter-spacing: 0.3px;
+  }
+
+  .why-us-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .mini-stat {
+    background: var(--off-white);
+    border-radius: 8px;
+    padding: 22px 24px;
+    border-top: 3px solid var(--red);
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.5s, transform 0.5s;
+  }
+
+  .mini-stat.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .mini-stat .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--red);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .mini-stat .desc {
+    font-size: 14px;
+    color: var(--mid-gray);
+    line-height: 1.45;
+  }
+
+  .testimonial-block {
+    background: var(--warm-gray);
+    border-radius: 8px;
+    padding: 24px;
+    margin-top: 28px;
+    border-left: 4px solid var(--red);
+  }
+
+  .testimonial-block blockquote {
+    font-style: italic;
+    font-size: 0.98rem;
+    color: var(--charcoal);
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+
+  .testimonial-block cite {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--red);
+    font-style: normal;
+  }
+
+  /* ── 3 STEPS ── */
+  .steps-section {
+    background: var(--red);
+  }
+
+  .steps-section .section-title,
+  .steps-section .section-eyebrow {
+    color: var(--white);
+  }
+
+  .steps-section .section-eyebrow {
+    opacity: 0.7;
+  }
+
+  .steps-section .section-lead {
+    color: rgba(255,255,255,0.8);
+  }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 40px;
+  }
+
+  .step-card {
+    text-align: center;
+    padding: 36px 24px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.2);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+  }
+
+  .step-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .step-number {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: var(--white);
+    color: var(--red);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 18px;
+  }
+
+  .step-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 10px;
+  }
+
+  .step-card p {
+    font-size: 0.93rem;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.55;
+  }
+
+  .steps-cta {
+    text-align: center;
+    margin-top: 44px;
+  }
+
+  .btn-white {
+    display: inline-block;
+    background: var(--white);
+    color: var(--red);
+    padding: 16px 40px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.15);
+    animation: pulse 3s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 18px rgba(0,0,0,0.15); }
+    50% { box-shadow: 0 6px 28px rgba(0,0,0,0.28); }
+  }
+
+  .btn-white:hover {
+    transform: translateY(-2px);
+  }
+
+  /* ── SOCIAL PROOF ── */
+  .proof-section {
+    background: var(--off-white);
+  }
+
+  .proof-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+  }
+
+  .proof-card {
+    background: var(--white);
+    border-radius: 8px;
+    padding: 28px 24px;
+    box-shadow: 0 2px 14px rgba(0,0,0,0.06);
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.5s, transform 0.5s;
+  }
+
+  .proof-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .proof-card blockquote {
+    font-style: italic;
+    font-size: 0.97rem;
+    color: var(--charcoal);
+    line-height: 1.6;
+    margin-bottom: 14px;
+  }
+
+  .proof-card cite {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--red);
+    font-style: normal;
+  }
+
+  .stars {
+    color: #f5a623;
+    font-size: 15px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+  }
+
+  /* ── DONATION FORM SECTION ── */
+  .donation-section {
+    background: var(--white);
+  }
+
+  .form-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin-bottom: 12px;
+    text-align: center;
+  }
+
+  .form-sub {
+    text-align: center;
+    color: var(--mid-gray);
+    margin-bottom: 36px;
+    font-size: 1rem;
+  }
+
+  .amount-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-bottom: 24px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .amount-btn {
+    border: 2px solid var(--light-gray);
+    background: var(--white);
+    border-radius: 6px;
+    padding: 16px 10px;
+    cursor: pointer;
+    text-align: center;
+    transition: border-color 0.2s, background 0.2s;
+    font-family: 'Source Sans 3', sans-serif;
+  }
+
+  .amount-btn:hover, .amount-btn.active {
+    border-color: var(--red);
+    background: #fef3f2;
+  }
+
+  .amount-btn .price {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--red);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .amount-btn .impact {
+    font-size: 11px;
+    color: var(--mid-gray);
+    line-height: 1.3;
+  }
+
+  .form-embed-placeholder {
+    background: var(--warm-gray);
+    border: 2px dashed var(--light-gray);
+    border-radius: 8px;
+    padding: 40px;
+    text-align: center;
+    color: var(--mid-gray);
+    font-size: 14px;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
+  }
+
+  .form-donate-btn {
+    display: block;
+    background: var(--red);
+    color: var(--white);
+    text-decoration: none;
+    padding: 18px 40px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+    max-width: 340px;
+    margin: 0 auto;
+    transition: background 0.2s, transform 0.2s;
+    letter-spacing: 0.3px;
+  }
+
+  .form-donate-btn:hover {
+    background: var(--red-dark);
+    transform: translateY(-2px);
+  }
+
+  /* ── COMMUNITY TIERS ── */
+  .tiers-section {
+    background: var(--charcoal);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .tiers-section::before {
+    content: '';
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(213,43,30,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .tiers-section .section-title {
+    color: var(--white);
+  }
+
+  .tiers-section .section-eyebrow {
+    color: rgba(255,255,255,0.5);
+  }
+
+  .tiers-section .section-lead {
+    color: rgba(255,255,255,0.65);
+  }
+
+  .tiers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 44px;
+  }
+
+  .tier-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 10px;
+    padding: 34px 26px;
+    text-align: center;
+    transition: border-color 0.2s, background 0.2s;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s, border-color 0.2s;
+  }
+
+  .tier-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .tier-card:hover {
+    border-color: var(--red);
+    background: rgba(213,43,30,0.08);
+  }
+
+  .tier-card.featured {
+    border-color: var(--red);
+    background: rgba(213,43,30,0.1);
+    position: relative;
+  }
+
+  .featured-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--red);
+    color: var(--white);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 20px;
+  }
+
+  .tier-name {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 10px;
+  }
+
+  .tier-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1;
+  }
+
+  .tier-price sup {
+    font-size: 1.2rem;
+    vertical-align: super;
+    font-weight: 400;
+  }
+
+  .tier-price span {
+    font-size: 14px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 400;
+    color: rgba(255,255,255,0.55);
+  }
+
+  .tier-animal {
+    font-size: 2.2rem;
+    margin: 16px 0 10px;
+  }
+
+  .tier-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 16px;
+  }
+
+  .tier-perks {
+    list-style: none;
+    margin-bottom: 26px;
+  }
+
+  .tier-perks li {
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    line-height: 1.45;
+  }
+
+  .tier-perks li:last-child { border-bottom: none; }
+
+  .tier-perks li::before {
+    content: '✓ ';
+    color: var(--red-light);
+    font-weight: 700;
+  }
+
+  .tier-btn {
+    display: block;
+    background: var(--red);
+    color: var(--white);
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 14px;
+    transition: background 0.2s;
+  }
+
+  .tier-btn:hover { background: var(--red-light); }
+
+  /* ── FAQ ── */
+  .faq-section {
+    background: var(--off-white);
+  }
+
+  .faq-list {
+    max-width: 720px;
+    margin: 40px auto 0;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--light-gray);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s, transform 0.4s;
+  }
+
+  .faq-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .faq-q {
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 20px 0;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .faq-q:hover { color: var(--red); }
+
+  .faq-q .arrow {
+    font-size: 18px;
+    color: var(--red);
+    transition: transform 0.25s;
+    flex-shrink: 0;
+  }
+
+  .faq-q.open .arrow { transform: rotate(45deg); }
+
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s;
+  }
+
+  .faq-a.open {
+    max-height: 400px;
+    padding-bottom: 18px;
+  }
+
+  .faq-a p {
+    font-size: 0.95rem;
+    color: var(--mid-gray);
+    line-height: 1.65;
+  }
+
+  /* ── EMAIL OPT-IN ── */
+  .optin-section {
+    background: var(--red);
+    text-align: center;
+    padding: 70px 40px;
+  }
+
+  .optin-section .section-title {
+    color: var(--white);
+    max-width: 600px;
+    margin: 0 auto 14px;
+  }
+
+  .optin-section p {
+    color: rgba(255,255,255,0.8);
+    max-width: 500px;
+    margin: 0 auto 30px;
+    font-size: 1rem;
+  }
+
+  .optin-form {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .optin-form input {
+    flex: 1;
+    min-width: 240px;
+    padding: 14px 18px;
+    border-radius: 4px;
+    border: none;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 15px;
+    outline: none;
+  }
+
+  .optin-form button {
+    background: var(--charcoal);
+    color: var(--white);
+    border: none;
+    padding: 14px 28px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    font-family: 'Source Sans 3', sans-serif;
+    transition: background 0.2s;
+  }
+
+  .optin-form button:hover { background: #2d2d2d; }
+
+  .optin-note {
+    font-size: 12px;
+    color: rgba(255,255,255,0.55);
+    margin-top: 14px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--charcoal);
+    color: rgba(255,255,255,0.6);
+    padding: 50px 40px 30px;
+  }
+
+  .footer-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+
+  .footer-brand p {
+    font-size: 14px;
+    line-height: 1.65;
+    margin-top: 16px;
+    max-width: 300px;
+  }
+
+  .footer-col h4 {
+    font-family: 'Playfair Display', serif;
+    color: var(--white);
+    font-size: 15px;
+    margin-bottom: 14px;
+  }
+
+  .footer-col a {
+    display: block;
+    color: rgba(255,255,255,0.55);
+    text-decoration: none;
+    font-size: 13px;
+    margin-bottom: 8px;
+    transition: color 0.2s;
+  }
+
+  .footer-col a:hover { color: var(--white); }
+
+  .footer-bottom {
+    max-width: 960px;
+    margin: 0 auto;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 24px;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    header { padding: 14px 20px; }
+    .hero-content { padding: 60px 24px; }
+    .why-us-inner { grid-template-columns: 1fr; gap: 32px; }
+    .steps-grid { grid-template-columns: 1fr; }
+    .tiers-grid { grid-template-columns: 1fr; }
+    .amount-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-inner { grid-template-columns: 1fr; }
+    section { padding: 60px 24px; }
+    .stats-band { padding: 40px 24px; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a href="https://www.arlboston.org" class="logo-wrap" aria-label="Animal Rescue League of Boston home">
+    <svg class="logo-svg" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="26" cy="26" r="26" fill="#d52b1e"/>
+      <text x="26" y="32" text-anchor="middle" fill="white" font-family="Georgia, serif" font-weight="900" font-size="20">ARL</text>
+    </svg>
+    <div class="logo-text">
+      Animal Rescue League
+      <span>of Boston · Est. 1899</span>
+    </div>
+  </a>
+  <a href="https://www.arlboston.org/champions/" class="header-cta">Give Monthly</a>
+</header>
+
+<!-- HERO -->
+<section class="hero" aria-label="Hero">
+  <div class="hero-bg" role="img" aria-label="Person holding a small dog"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Champions Circle Monthly Giving</p>
+    <h1>19,722 animals helped in 2025. <em>Your $25/month</em> keeps the mission going 365 days a year.</h1>
+    <p class="hero-sub">There is no government funding for this work. Animals in Greater Boston rely entirely on people like you. Join the Champions Circle and become the steady, dependable support they count on every single month.</p>
+    <div class="hero-buttons">
+      <a href="https://www.arlboston.org/champions/" class="btn-primary">Join the Champions Circle</a>
+      <a href="#learn-more" class="btn-ghost">See Your Impact</a>
+    </div>
+    <div class="vsl-placeholder">
+      [VSL PLACEHOLDER: Insert 60-90 second video of ARL animals and staff here]
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT STATS -->
+<div class="stats-band" id="learn-more" aria-label="2025 Impact">
+  <div class="stats-grid">
+    <div class="stat-item">
+      <div class="stat-number">19,722</div>
+      <div class="stat-label">animals helped in 2025 with your support</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">3,339</div>
+      <div class="stat-label">animals found loving homes last year</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">$10.7M</div>
+      <div class="stat-label">value of veterinary care provided to the community</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">125+</div>
+      <div class="stat-label">years as Massachusetts' first female-founded animal welfare org</div>
+    </div>
+  </div>
+</div>
+
+<!-- PAIN POINTS -->
+<section class="pain-section" aria-labelledby="pain-title">
+  <div class="section-inner">
+    <p class="section-eyebrow">The Problem</p>
+    <h2 class="section-title" id="pain-title">Animals in Boston need help every day. Not just in December.</h2>
+    <p class="section-lead">You care. You've seen the posts, shared the stories, maybe even lit a candle for a dog you never met. But something keeps getting in the way of doing more.</p>
+
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="pain-icon">📅</div>
+        <h3>The timing problem</h3>
+        <p>Most donations to ARL arrive in the final two weeks of December. But animals get sick, hurt, and lost in January, March, and August too. The need never takes a holiday.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">🏠</div>
+        <h3>The housing crisis hits pets hard</h3>
+        <p>29% of surrenders at ARL in 2024 came from housing-related reasons. A family loses their apartment. The landlord says no pets. A good owner makes an impossible choice.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">💸</div>
+        <h3>Zero government funding</h3>
+        <p>Not a dime of public funding supports this work. Every vaccine, every surgery, every rescue comes from people who decided animals matter. People exactly like you.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">🩺</div>
+        <h3>Vet care costs are rising</h3>
+        <p>The cost of owning a dog is now $1,400 a year, nearly double what it was in 2010. Families who love their pets are forced to choose between care and keeping them.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY ARL -->
+<section class="why-us-section" aria-labelledby="why-title">
+  <div class="why-us-inner">
+    <div class="why-us-copy">
+      <p class="section-eyebrow">Why ARL</p>
+      <h2 class="section-title" id="why-title">More than a shelter. A full system built to keep pets and people together.</h2>
+      <p>ARL goes far beyond finding homes for animals. We bring veterinary care directly into communities. We run mobile spay and neuter clinics across Cape Cod and Eastern Massachusetts. We keep families together through food pantries and temporary pet housing when things get hard.</p>
+      <p>When you give monthly, you fund all of it. Adoption. Emergency rescue. Community vet clinics. Law enforcement for animal cruelty. A free pet behavior helpline. 125 years of work, with no signs of stopping.</p>
+      <p>Charity Navigator gives ARL 4 stars. Candid gives us Platinum transparency status. Great Nonprofits named us top-rated in 2026. This is an organization that puts your money to work.</p>
+      <div class="awards-row">
+        <div class="award-badge">⭐⭐⭐⭐ Charity Navigator</div>
+        <div class="award-badge">🏆 Platinum Transparency</div>
+        <div class="award-badge">✅ Top-Rated 2026</div>
+        <div class="award-badge">🎖 Classy Award Winner</div>
+      </div>
+
+      <div class="testimonial-block">
+        <blockquote>"They're living their best life! Dash loves his walks, and Millie is building confidence and enjoying new adventures. ARL changed everything for our family."</blockquote>
+        <cite>Adopter of Millie and Dash, 2025</cite>
+      </div>
+    </div>
+
+    <div class="why-us-stats">
+      <div class="mini-stat">
+        <div class="num">15,270</div>
+        <div class="desc">animals received medical care to help them heal and thrive in 2025</div>
+      </div>
+      <div class="mini-stat">
+        <div class="num">271,712</div>
+        <div class="desc">pet meals provided to 1,143 struggling families last year</div>
+      </div>
+      <div class="mini-stat">
+        <div class="num">111,642</div>
+        <div class="desc">volunteer hours contributed by 1,131 dedicated volunteers in 2025</div>
+      </div>
+      <div class="mini-stat">
+        <div class="num">4,886</div>
+        <div class="desc">low-cost spay/neuter surgeries through the Spay Waggin' in 2025</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 STEPS -->
+<section class="steps-section" aria-labelledby="steps-title">
+  <div class="section-inner">
+    <p class="section-eyebrow">How It Works</p>
+    <h2 class="section-title" id="steps-title">Three steps to becoming a Champion for animals.</h2>
+    <p class="section-lead">Joining is simple. Cancel anytime. And the animals feel it immediately.</p>
+
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <h3>Choose your monthly gift</h3>
+        <p>Pick the amount that works for your life. $12 covers vaccines for 12 animals. $28 funds behavior training. $50 cares for an injured animal. Every dollar works immediately.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <h3>Join the Champions Circle</h3>
+        <p>Set up your hassle-free automatic gift once. You get a behind-the-scenes virtual tour of ARL, monthly impact updates, and the quiet pride of knowing you're there for animals year-round.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <h3>Watch your impact unfold</h3>
+        <p>Each month, ARL puts your gift to work on the animals who need it most right now. You'll receive real stories, real outcomes, and the knowledge that animals across Massachusetts are safer because of you.</p>
+      </div>
+    </div>
+
+    <div class="steps-cta">
+      <a href="https://www.arlboston.org/champions/" class="btn-white">Yes, I Want to Be a Champion</a>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section class="proof-section" aria-labelledby="proof-title">
+  <div class="section-inner">
+    <p class="section-eyebrow">What Donors Say</p>
+    <h2 class="section-title" id="proof-title">10,969 donors gave $4.4M in 2025. Here is why they do it.</h2>
+
+    <div class="proof-grid">
+      <div class="proof-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"ARL is exceptional in every way. They genuinely care about every animal that comes through their doors and take the time to match each one with the right family."</blockquote>
+        <cite>Great Nonprofits Reviewer</cite>
+      </div>
+      <div class="proof-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"I've been a monthly donor for years because I trust them completely. I know my money goes directly to animals who need it. The updates they send me make it real."</blockquote>
+        <cite>Champions Circle Member</cite>
+      </div>
+      <div class="proof-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"We adopted our dog from ARL five years ago. Now I give every month. It feels like giving back to the organization that gave us our family member."</blockquote>
+        <cite>ARL Adopter and Monthly Donor</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DONATION FORM -->
+<section class="donation-section" aria-labelledby="form-headline">
+  <div class="section-inner" style="text-align: center;">
+    <h2 class="form-headline" id="form-headline">Your monthly gift starts here.</h2>
+    <p class="form-sub">Set it once. Cancel anytime. Make a difference every single day.</p>
+
+    <div class="amount-grid">
+      <button class="amount-btn" onclick="selectAmount(this)">
+        <span class="price">$12</span>
+        <span class="impact">12 animals vaccinated</span>
+      </button>
+      <button class="amount-btn active" onclick="selectAmount(this)">
+        <span class="price">$28</span>
+        <span class="impact">behavior training + enrichment</span>
+      </button>
+      <button class="amount-btn" onclick="selectAmount(this)">
+        <span class="price">$50</span>
+        <span class="impact">cares for an injured animal</span>
+      </button>
+      <button class="amount-btn" onclick="selectAmount(this)">
+        <span class="price">$84</span>
+        <span class="impact">emergency rescue response</span>
+      </button>
+    </div>
+
+    <div class="form-embed-placeholder">
+      [DONATION FORM EMBED: Insert Champions Circle monthly giving form here.<br>Suggested default monthly amounts: $12 / $28 / $50 / $84 / Other<br>Link: https://www.arlboston.org/champions/]
+    </div>
+
+    <a href="https://www.arlboston.org/champions/" class="form-donate-btn">Become a Champions Circle Member</a>
+    <p style="color: var(--mid-gray); font-size: 13px; margin-top: 16px;">ARL is a registered 501(c)(3) nonprofit. EIN: 04-2103714. Your gift is tax-deductible.</p>
+  </div>
+</section>
+
+<!-- CHAMPIONS CIRCLE TIERS -->
+<section class="tiers-section" aria-labelledby="tiers-title">
+  <div class="section-inner">
+    <p class="section-eyebrow">The Champions Circle</p>
+    <h2 class="section-title" id="tiers-title">Three ways to become a Champion. One community built on care.</h2>
+    <p class="section-lead">Every tier includes automatic monthly giving, tax receipts, a behind-the-scenes virtual tour, and the knowledge that animals across Massachusetts are safer because of you.</p>
+
+    <div class="tiers-grid">
+      <div class="tier-card">
+        <div class="tier-name">Shelter Friend</div>
+        <div class="tier-price"><sup>$</sup>15<span>/mo</span></div>
+        <div class="tier-animal">🐾</div>
+        <div class="tier-title">You're in. You care.</div>
+        <ul class="tier-perks">
+          <li>Monthly impact email with real animal stories</li>
+          <li>Virtual behind-the-scenes tour of ARL</li>
+          <li>Name listed on ARL's online donor community wall</li>
+          <li>Annual giving statement for tax purposes</li>
+        </ul>
+        <a href="https://www.arlboston.org/champions/" class="tier-btn">Start at $15/month</a>
+      </div>
+
+      <div class="tier-card featured">
+        <div class="featured-badge">Most Popular</div>
+        <div class="tier-name">Guardian</div>
+        <div class="tier-price"><sup>$</sup>50<span>/mo</span></div>
+        <div class="tier-animal">🐕</div>
+        <div class="tier-title">You're invested. You make it real.</div>
+        <ul class="tier-perks">
+          <li>Everything in Shelter Friend</li>
+          <li>Quarterly Polaroid photo of an animal you helped (mailed)</li>
+          <li>Handwritten thank-you note from ARL staff</li>
+          <li>Early access to ARL's annual impact report</li>
+          <li>Monthly behind-the-scenes video update</li>
+        </ul>
+        <a href="https://www.arlboston.org/champions/" class="tier-btn">Join as a Guardian</a>
+      </div>
+
+      <div class="tier-card">
+        <div class="tier-name">Champion</div>
+        <div class="tier-price"><sup>$</sup>100<span>/mo</span></div>
+        <div class="tier-animal">🏆</div>
+        <div class="tier-title">You're at the core of this mission.</div>
+        <ul class="tier-perks">
+          <li>Everything in Guardian</li>
+          <li>Named as a Champion in ARL communications</li>
+          <li>Personal birthday outreach from ARL leadership</li>
+          <li>ARL branded keepsake mailed on giving anniversary</li>
+          <li>Invitation to exclusive Champions-only events</li>
+        </ul>
+        <a href="https://www.arlboston.org/champions/" class="tier-btn">Become a Champion</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" aria-labelledby="faq-title">
+  <div class="section-inner">
+    <p class="section-eyebrow">Questions</p>
+    <h2 class="section-title" id="faq-title">Everything you want to know before you join.</h2>
+
+    <div class="faq-list" id="faq-list"></div>
+  </div>
+</section>
+
+<!-- EMAIL OPT-IN -->
+<section class="optin-section" aria-labelledby="optin-title">
+  <h2 class="section-title" id="optin-title">Stay connected to the animals you're helping.</h2>
+  <p>Sign up for ARL's email list and receive real animal stories, program updates, and the moments that remind you why this work matters.</p>
+  <div class="optin-form">
+    <input type="email" placeholder="Your email address" aria-label="Email address">
+    <button type="button">Stay in the Loop</button>
+  </div>
+  <p class="optin-note">Unsubscribe anytime. We respect your inbox.</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <svg width="48" height="48" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="26" cy="26" r="26" fill="#d52b1e"/>
+        <text x="26" y="32" text-anchor="middle" fill="white" font-family="Georgia, serif" font-weight="900" font-size="20">ARL</text>
+      </svg>
+      <p>Animal Rescue League of Boston has been an unwavering champion for animals since 1899. Massachusetts' first female-founded animal welfare organization. Funded entirely by people who believe pets are family.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Visit Us</h4>
+      <a href="#">Boston: 10 Chandler Street</a>
+      <a href="#">Dedham: 55 Anna's Place</a>
+      <a href="#">Cape Cod: 3981 Main St, East Brewster</a>
+      <a href="tel:6174269170">(617) 426-9170</a>
+    </div>
+    <div class="footer-col">
+      <h4>Get Involved</h4>
+      <a href="https://www.arlboston.org/champions/">Give Monthly</a>
+      <a href="https://www.arlboston.org/adopt/adopt-a-pet/">Adopt a Pet</a>
+      <a href="https://www.arlboston.org/get-involved/volunteer/">Volunteer</a>
+      <a href="https://www.arlboston.org/get-involved/foster/">Foster a Pet</a>
+      <a href="https://www.arlboston.org/donate/">Ways to Give</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Animal Rescue League of Boston | 501(c)(3) Nonprofit | EIN: 04-2103714</span>
+    <span>MA Shelter/Rescue License #: 0221</span>
+  </div>
+</footer>
+
+<script>
+// FAQs
+const faqs = [
+  { q: "How are my monthly donations used?", a: "Your gift goes directly to ARL's programs: shelter and adoption services, veterinary care, emergency rescue, field services, community vet clinics, and keeping pets with families facing hardship. ARL has Platinum transparency status from Candid and 4 stars from Charity Navigator, so you can see exactly where the money goes." },
+  { q: "Is ARL a legitimate, trustworthy organization?", a: "Yes. ARL has operated since 1899 and is a registered 501(c)(3) nonprofit (EIN: 04-2103714). We hold a 4-star rating from Charity Navigator, Platinum transparency from Candid, and were named a Great Nonprofits Top-Rated organization in 2026. Your trust matters to us." },
+  { q: "Is my donation tax-deductible?", a: "Yes. All donations to ARL are tax-deductible to the fullest extent allowed by law. Monthly donors receive an annual giving statement for tax purposes. ARL's tax ID (EIN) is 04-2103714." },
+  { q: "Can I cancel my monthly donation anytime?", a: "Absolutely. There are no long-term commitments, penalties, or hoops to jump through. You can cancel, pause, or adjust your gift at any time by contacting ARL's Development Department at (617) 426-9170 x603 or managing your donation in the donor portal." },
+  { q: "How quickly does my gift make an impact?", a: "Immediately. Monthly gifts are not saved for a rainy day. They go to work right away covering the costs of caring for animals currently in ARL's care, running the Spay Waggin' and Wellness Waggin' clinics, and funding rescue operations across Greater Boston, Eastern Massachusetts, and Cape Cod." },
+  { q: "What makes the Champions Circle different from a one-time donation?", a: "Monthly giving creates the reliable, predictable funding ARL needs to plan ahead and care for animals all year. Most one-time donations arrive in December, but animals need help every month. Champions Circle members are the steady heartbeat that keeps the organization running in the quiet months." },
+  { q: "I'm not sure I can afford a monthly gift. What's the minimum?", a: "Any amount helps. Even $12 a month covers vaccines and medications for 12 animals annually. That is less than the cost of a streaming subscription. If you need to start smaller than our suggested amounts, contact us and we will find the right fit." },
+  { q: "Do you offer volunteer opportunities in addition to giving?", a: "Yes. ARL has over 1,100 active volunteers who contributed more than 111,000 hours in 2025. You can also become a foster family, attend events, and participate in humane education programs. Giving and volunteering together create a much bigger impact." },
+  { q: "How do I know where my specific donation went?", a: "Champions Circle members receive monthly impact emails with real stories from ARL programs. Guardian and Champion tier members also receive behind-the-scenes video updates. ARL publishes a full annual impact report and financial statements on its website." },
+  { q: "Can I give in honor or memory of a pet?", a: "Yes. ARL accepts honor and memorial gifts through their website. These make meaningful tributes for friends and family who love animals. Contact info@arlboston.org or visit arlboston.org/donate for details on memorial giving options." }
+];
+
+const faqList = document.getElementById('faq-list');
+faqs.forEach((faq, i) => {
+  const item = document.createElement('div');
+  item.className = 'faq-item';
+  item.innerHTML = `
+    <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+      ${faq.q}
+      <span class="arrow">+</span>
+    </button>
+    <div class="faq-a" aria-hidden="true"><p>${faq.a}</p></div>
+  `;
+  faqList.appendChild(item);
+});
+
+function toggleFaq(btn) {
+  const answer = btn.nextElementSibling;
+  const isOpen = btn.classList.contains('open');
+  document.querySelectorAll('.faq-q.open').forEach(q => {
+    q.classList.remove('open');
+    q.setAttribute('aria-expanded', 'false');
+    q.nextElementSibling.classList.remove('open');
+    q.nextElementSibling.setAttribute('aria-hidden', 'true');
+  });
+  if (!isOpen) {
+    btn.classList.add('open');
+    btn.setAttribute('aria-expanded', 'true');
+    answer.classList.add('open');
+    answer.setAttribute('aria-hidden', 'false');
+  }
+}
+
+// Amount selection
+function selectAmount(btn) {
+  document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+// Scroll animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => {
+        entry.target.classList.add('visible');
+      }, entry.target.dataset.delay || 0);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.stat-item, .pain-card, .mini-stat, .step-card, .proof-card, .tier-card, .faq-item').forEach((el, i) => {
+  el.dataset.delay = (i % 4) * 100;
+  observer.observe(el);
+});
+</script>
+
+</body>
+</html>
